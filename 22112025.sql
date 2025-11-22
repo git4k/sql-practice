@@ -116,17 +116,3 @@ COALESCE(amount,0)
 
 
 
- SELECT 
-    luca,
-    LENGTH(luca) AS luca_length
-FROM (
-    SELECT 
-        UPPER(
-            CASE 
-                WHEN address IS NULL THEN 'noaddress'
-                ELSE CONCAT(customer_name, ' ', address)
-            END
-        ) AS luca
-    FROM customerdata
-) x;
-
